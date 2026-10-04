@@ -1,0 +1,59 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dollarwave"
+version = "2.0.7"
+description = "Inflation adjustment calculations using historical U.S. CPI data."
+readme = "README.md"
+requires-python = ">=3.8,<3.15"
+license = {file = "LICENSE"}
+authors = [{name = "DOYDL Technologies"}]
+keywords = ["cpi", "economics", "inflation", "finance"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Office/Business :: Financial",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "matplotlib",
+    "pandas",
+    "pillow",
+    "requests",
+]
+
+[project.optional-dependencies]
+test = [
+    "build",
+    "pytest>=7",
+    "twine",
+]
+
+[project.urls]
+Homepage = "https://github.com/doydl-technologies/dollarwave"
+Issues = "https://github.com/doydl-technologies/dollarwave/issues"
+Releases = "https://github.com/doydl-technologies/dollarwave/releases"
+Source = "https://github.com/doydl-technologies/dollarwave"
+
+[tool.setuptools.packages.find]
+include = ["dollarwave*"]
+
+[tool.setuptools.package-data]
+dollarwave = ["assets/*.ico", "assets/*.png"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
